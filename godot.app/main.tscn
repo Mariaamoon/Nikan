@@ -25,8 +25,10 @@ texture = ExtResource("3_h2yge")
 [node name="SpeechBubble" type="Panel" parent="." unique_id=126830318]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 143.0
+offset_top = 42.0
+offset_right = 343.0
+offset_bottom = 242.0
 
 [node name="speech" type="Label" parent="SpeechBubble" unique_id=2092180794]
 layout_mode = 0
@@ -50,19 +52,20 @@ texture = ExtResource("2_h2yge")
 
 [node name="TimerInput" type="LineEdit" parent="." unique_id=2011018089]
 layout_mode = 0
-offset_left = 537.0
-offset_top = 366.0
-offset_right = 605.5
-offset_bottom = 397.0
+offset_left = 477.0
+offset_top = 329.0
+offset_right = 545.5
+offset_bottom = 360.0
 
 [node name="StartButton" type="Button" parent="." unique_id=495440246]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1.0
-offset_right = 90.0
-offset_bottom = 72.0
+offset_left = -123.0
+offset_top = 198.0
+offset_right = -6.0
+offset_bottom = 270.0
 grow_horizontal = 2
 text = "Start Reading!"
 
@@ -71,10 +74,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 76.0
-offset_top = -20.0
-offset_right = 204.0
-offset_bottom = 20.0
+offset_left = 481.0
+offset_top = -36.0
+offset_right = 609.0
+offset_bottom = 4.0
 grow_vertical = 2
 text = "00:00"
 
@@ -91,6 +94,8 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="XPLabel" type="Label" parent="." unique_id=449339030]
+modulate = Color(0.4627451, 1, 1, 1)
+self_modulate = Color(1, 0.40392157, 1, 1)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -110,20 +115,71 @@ one_shot = true
 
 [node name="PagesInput" type="LineEdit" parent="." unique_id=1214318651]
 layout_mode = 0
-offset_right = 68.5
-offset_bottom = 31.0
+offset_left = 865.0
+offset_top = 66.0
+offset_right = 1036.5
+offset_bottom = 97.0
 
 [node name="LogPagesButton" type="Button" parent="." unique_id=1148041048]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -213.0
+offset_top = 145.0
+offset_right = -136.0
+offset_bottom = 180.0
+grow_horizontal = 0
 
 [node name="PagesLabel" type="Label" parent="." unique_id=1244100067]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="RankLabel" type="Label" parent="." unique_id=679080413]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Bookshelf" type="HBoxContainer" parent="." unique_id=1637307024]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BookTitleInput" type="LineEdit" parent="." unique_id=126187776]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 461.0
+offset_right = 324.5
+offset_bottom = 519.0
+
+[node name="FinishBookButton" type="Button" parent="." unique_id=1229975299]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.0
+offset_top = 209.0
+offset_right = -393.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="books_finished" type="Label" parent="." unique_id=1239176674]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -131,3 +187,4 @@ offset_bottom = 23.0
 [connection signal="pressed" from="StartButton" to="." method="_on_add_task_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="LogPagesButton" to="." method="_on_log_pages_button_pressed"]
+[connection signal="pressed" from="FinishBookButton" to="." method="_on_finish_book_button_pressed"]

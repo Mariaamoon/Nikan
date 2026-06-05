@@ -10,6 +10,8 @@ var xp = 0
 var time_left = 0
 var reading = false
 var total_pages = 0
+var books_finished = 0
+var book_titles = []
 
 @onready var speech = $SpeechBubble/speech
 @onready var pages_input = $PagesInput
@@ -20,6 +22,8 @@ var total_pages = 0
 @onready var timer_input = $TimerInput
 @onready var timer_label = $TimerLabel
 @onready var reading_timer = $ReadingTimer
+@onready var book_title = $BookTitleInput
+@onready var book_finished = $books_finished
 
 func _ready():
 	load_game()
@@ -30,6 +34,8 @@ func update_ui():
 	xp_bar.value = xp
 	xp_label.text = "Int: " + str(xp)
 	pages_label.text = "Pages Read: " + str(total_pages)
+	#books_finished.text = "Books Read: "+ str(books_finished)
+
 	update_rank()
 
 func update_rank():
@@ -82,7 +88,9 @@ func save_game():
 
 	var data = {
 		"xp": xp,
-		"pages": total_pages
+		"pages": total_pages,
+		"books_finished": books_finished,
+		"book_titles": book_titles
 	}
 	var file = FileAccess.open(
 		"user://save.json",
@@ -102,7 +110,10 @@ func _on_log_pages_button_pressed():
 	pages_input.clear()
 	update_ui()
 	save_game()
-	speech.text = "\n Nice! You read %d pages!" % pages
+	if pages == 0:
+		speech.text = "oops you read nothing today :("
+	else:
+		speech.text = "\n Nice! You read %d pages!" % pages
 
 func load_game():
 
@@ -118,4 +129,27 @@ func load_game():
 	if data:
 		xp = data.get("xp", 0)
 		total_pages = data.get("pages", 0)
+		books_finished = data.get("books_finished" ,0)
+		book_titles = data.get("book_tites" ,'')
 	update_ui()
+
+func add_book_to_shelf(title):
+
+	var label = Label.new()
+
+	label.text = "📕"
+
+	$Bookshelf.add_child(label)
+
+func _on_finish_book_button_pressed() -> void:
+	if book_title.text.is_empty():
+		return
+	add_book_to_shelf(book_title)
+	book_titles.append(book_title)
+	var book = str(book_title.text)
+	books_finished += 1
+	add_xp(10)
+	book_title.clear()
+	update_ui()
+	save_game()
+	speech.text = "\n Nice! You read %s!" % book
