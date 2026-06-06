@@ -34,7 +34,7 @@ func update_ui():
 	xp_bar.value = xp
 	xp_label.text = "Int: " + str(xp)
 	pages_label.text = "Pages Read: " + str(total_pages)
-	#books_finished.text = "Books Read: "+ str(books_finished)
+	book_finished.text = "Books Read: "+ str(books_finished)
 
 	update_rank()
 
@@ -137,10 +137,11 @@ func add_book_to_shelf(title):
 	var label = Label.new()
 	label.text = "📕"
 	book_titles.append(title)
+	book_finished.text = "books finished: %d " % books_finished
 	$Bookshelf.add_child(label)
 
 func _on_finish_book_button_pressed() -> void:
-	if book_title.text.is_empty():
+	if book_title.text.is_empty() or is_blank(book_title.text):
 		return
 	add_book_to_shelf(book_title)
 	var book = str(book_title.text)
@@ -150,3 +151,6 @@ func _on_finish_book_button_pressed() -> void:
 	update_ui()
 	save_game()
 	speech.text = "\n Nice! You read %s!" % book
+	
+func is_blank(input:String) -> bool:
+	return input.strip_edges().is_empty()
