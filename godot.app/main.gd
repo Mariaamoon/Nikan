@@ -11,7 +11,7 @@ var time_left = 0
 var reading = false
 var total_pages = 0
 var books_finished = 0
-var book_titles = []
+var book_titles= []
 
 @onready var speech = $SpeechBubble/speech
 @onready var pages_input = $PagesInput
@@ -130,22 +130,19 @@ func load_game():
 		xp = data.get("xp", 0)
 		total_pages = data.get("pages", 0)
 		books_finished = data.get("books_finished" ,0)
-		book_titles = data.get("book_tites" ,'')
+		#book_titles = data.get("book_tites" ,'')
 	update_ui()
 
 func add_book_to_shelf(title):
-
 	var label = Label.new()
-
 	label.text = "📕"
-
+	book_titles.append(title)
 	$Bookshelf.add_child(label)
 
 func _on_finish_book_button_pressed() -> void:
 	if book_title.text.is_empty():
 		return
 	add_book_to_shelf(book_title)
-	book_titles.append(book_title)
 	var book = str(book_title.text)
 	books_finished += 1
 	add_xp(10)
