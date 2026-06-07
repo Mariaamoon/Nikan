@@ -60,7 +60,8 @@ func add_xp(amount):
 	save_game()
 
 func _on_start_button_pressed():
-	if timer_input.text.is_empty():
+	if timer_input.text.is_empty() or !valid_int(timer_input.text):
+		timer_input.clear()
 		return
 	var minutes = int(timer_input.text)
 	time_left = minutes 
@@ -78,6 +79,7 @@ func _process(delta):
 			finish_reading()
 
 func finish_reading():
+	timer_input.clear()
 	reading = false
 	var earned_xp = int(timer_input.text)
 	add_xp(earned_xp)
@@ -130,7 +132,7 @@ func load_game():
 		xp = data.get("xp", 0)
 		total_pages = data.get("pages", 0)
 		books_finished = data.get("books_finished" ,0)
-		#book_titles = data.get("book_tites" ,'')
+		book_titles = data.get("book_tites" ,[])
 	update_ui()
 
 func add_book_to_shelf(title):
@@ -154,3 +156,12 @@ func _on_finish_book_button_pressed() -> void:
 	
 func is_blank(input:String) -> bool:
 	return input.strip_edges().is_empty()
+
+func valid_int(new_text: String):
+		var filtered := ""
+		for c in new_text:
+			if c>= "0" and c<="9":
+				filtered+=c
+		if new_text != filtered:
+			return false
+		return true
