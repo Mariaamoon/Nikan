@@ -104,7 +104,8 @@ func save_game():
 
 func _on_log_pages_button_pressed():
 
-	if pages_input.text.is_empty():
+	if pages_input.text.is_empty() or !valid_int(pages_input.text):
+		pages_input.clear()
 		return
 	var pages = int(pages_input.text)
 	total_pages += pages

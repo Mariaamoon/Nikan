@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://dt2ofan62emnk" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://4pkx7de5481k" path="res://Photos 6_7_2026 4_16_26 PM.png" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bx1bq7oa6yajy" path="res://download.png" id="2_h2yge"]
-[ext_resource type="Texture2D" uid="uid://ci2xbv830iut" path="res://715317.jpg" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://7e8b3i0yw8m4" path="res://bok.png" id="4_1bvp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 
 [node name="Control" type="Control" unique_id=225764511]
 layout_mode = 3
@@ -20,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_h2yge")
+texture = ExtResource("2_1bvp3")
 
 [node name="SpeechBubble" type="Panel" parent="." unique_id=126830318]
 custom_minimum_size = Vector2(200, 200)
@@ -42,44 +45,45 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -98.0
-offset_top = -136.0
-offset_right = -2.0
-offset_bottom = -40.0
+offset_left = -431.0
+offset_top = -444.0
+offset_right = -335.0
+offset_bottom = -348.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_h2yge")
 
 [node name="TimerInput" type="LineEdit" parent="." unique_id=2011018089]
 layout_mode = 0
-offset_left = 477.0
-offset_top = 329.0
-offset_right = 545.5
-offset_bottom = 360.0
+offset_left = 275.0
+offset_top = 1026.0
+offset_right = 378.5
+offset_bottom = 1075.0
 
-[node name="StartButton" type="Button" parent="." unique_id=495440246]
+[node name="StartButton" type="TextureButton" parent="." unique_id=1231113668]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -123.0
-offset_top = 198.0
-offset_right = -6.0
-offset_bottom = 270.0
+offset_left = 123.0
+offset_top = 1062.0
+offset_right = 167.0
+offset_bottom = 1134.0
 grow_horizontal = 2
-text = "Start Reading!"
+texture_normal = ExtResource("4_1bvp3")
 
 [node name="TimerLabel" type="Label" parent="." unique_id=917590405]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 481.0
-offset_top = -36.0
-offset_right = 609.0
-offset_bottom = 4.0
+offset_left = 477.0
+offset_top = 395.0
+offset_right = 605.0
+offset_bottom = 435.0
 grow_vertical = 2
 text = "00:00"
+label_settings = SubResource("LabelSettings_lquwl")
 
 [node name="XPBar" type="ProgressBar" parent="." unique_id=1530647122]
 layout_mode = 1
@@ -115,10 +119,10 @@ one_shot = true
 
 [node name="PagesInput" type="LineEdit" parent="." unique_id=1214318651]
 layout_mode = 0
-offset_left = 865.0
-offset_top = 66.0
-offset_right = 1036.5
-offset_bottom = 97.0
+offset_left = 411.0
+offset_top = 540.0
+offset_right = 582.5
+offset_bottom = 571.0
 
 [node name="LogPagesButton" type="Button" parent="." unique_id=1148041048]
 layout_mode = 1
@@ -172,10 +176,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -451.0
-offset_top = 209.0
-offset_right = -393.0
-offset_bottom = 253.0
+offset_left = -177.0
+offset_top = 230.0
+offset_right = -119.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 
