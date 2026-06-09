@@ -102,21 +102,7 @@ func save_game():
 		JSON.stringify(data)
 	)
 
-func _on_log_pages_button_pressed():
 
-	if pages_input.text.is_empty() or !valid_int(pages_input.text):
-		pages_input.clear()
-		return
-	var pages = int(pages_input.text)
-	total_pages += pages
-	add_xp(pages / 2)
-	pages_input.clear()
-	update_ui()
-	save_game()
-	if pages == 0:
-		speech.text = "oops you read nothing today :("
-	else:
-		speech.text = "\n Nice! You read %d pages!" % pages
 
 func load_game():
 
@@ -166,3 +152,20 @@ func valid_int(new_text: String):
 		if new_text != filtered:
 			return false
 		return true
+
+
+func _on_log_pages_button_pressed() -> void:
+
+	if pages_input.text.is_empty() or !valid_int(pages_input.text):
+		pages_input.clear()
+		return
+	var pages = int(pages_input.text)
+	total_pages += pages
+	add_xp(pages / 2)
+	pages_input.clear()
+	update_ui()
+	save_game()
+	if pages == 0:
+		speech.text = "oops you read nothing today :("
+	else:
+		speech.text = "\n Nice! You read %d pages!" % pages
