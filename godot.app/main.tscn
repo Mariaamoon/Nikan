@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://dt2ofan62emnk" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://4pkx7de5481k" path="res://assets/Photos 6_7_2026 4_16_26 PM.png" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bx1bq7oa6yajy" path="res://assets/download.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://caqhgv0dv72ke" path="res://assets/dd.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://7e8b3i0yw8m4" path="res://assets/bok.png" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cuclfh11hrsgj" path="res://assets/ChatGPT Image Jun 4w 2026, 07_3wr3_43 PM.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://deucjkcoqfiby" path="res://assets/fs.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cx3v81bmtp4wb" path="res://assets/ChatGPT Image Jun 4w 202s6, 07_33_43 PM.png" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://dainmtq6f41fw" path="res://assets/booktitleM.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dok3l72ibm17f" path="res://assets/booktitle.png" id="9_kek77"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 
@@ -29,13 +32,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1bvp3")
 
-[node name="SpeechBubble" type="Panel" parent="." unique_id=126830318]
-custom_minimum_size = Vector2(200, 200)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=303498199]
 layout_mode = 0
-offset_left = 94.0
-offset_top = 689.0
-offset_right = 294.0
-offset_bottom = 889.0
+offset_left = 119.0
+offset_top = 700.0
+offset_right = 372.0
+offset_bottom = 872.0
+texture = ExtResource("3_5vw27")
+
+[node name="SpeechBubble" type="Panel" parent="." unique_id=126830318]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 759.0
+offset_right = 347.0
+offset_bottom = 847.0
 
 [node name="speech" type="Label" parent="SpeechBubble" unique_id=2092180794]
 layout_mode = 0
@@ -49,20 +59,20 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -444.0
-offset_top = -314.0
-offset_right = -348.0
-offset_bottom = -218.0
+offset_left = -386.0
+offset_top = -309.0
+offset_right = -290.0
+offset_bottom = -213.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_h2yge")
 
 [node name="TimerInput" type="LineEdit" parent="." unique_id=2011018089]
 layout_mode = 0
-offset_left = 491.0
-offset_top = 760.0
-offset_right = 672.5
-offset_bottom = 868.0
+offset_left = 176.0
+offset_top = 461.0
+offset_right = 357.5
+offset_bottom = 506.0
 
 [node name="time_pic" type="TextureRect" parent="." unique_id=1314204115]
 layout_mode = 0
@@ -140,18 +150,18 @@ skew = 0.16580628
 texture = ExtResource("6_272bh")
 
 [node name="PagesInput" type="LineEdit" parent="TextureRect2" unique_id=1214318651]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -161.95366
-offset_top = -37.531242
-offset_right = -84.36296
-offset_bottom = -6.5312424
+anchors_preset = -1
+anchor_left = 0.9140456
+anchor_top = 0.49582514
+anchor_right = 0.98193
+anchor_bottom = 0.49582514
+offset_left = -156.32501
+offset_top = -38.78323
+offset_right = -78.734314
+offset_bottom = -7.783231
 grow_horizontal = 0
 grow_vertical = 2
-rotation = -0.040142573
+rotation = 0.017453292
 size_flags_horizontal = 4
 size_flags_vertical = 6
 metadata/_edit_use_anchors_ = true
@@ -163,10 +173,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -312.0
-offset_right = -1.0
-offset_bottom = -257.0
+offset_left = -73.0
+offset_top = -113.0
+offset_right = 4.0
+offset_bottom = -58.0
 grow_horizontal = 0
 grow_vertical = 2
 texture_normal = ExtResource("5_lquwl")
@@ -199,26 +209,35 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1897071449]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 330.0
+offset_right = 350.0
+offset_bottom = 386.0
+texture = ExtResource("9_4c57u")
+
 [node name="BookTitleInput" type="LineEdit" parent="." unique_id=126187776]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 303.0
-offset_right = 355.5
-offset_bottom = 361.0
+offset_left = 192.0
+offset_top = 330.0
+offset_right = 343.0
+offset_bottom = 386.0
 
-[node name="FinishBookButton" type="Button" parent="." unique_id=1229975299]
+[node name="FinishBookButton" type="TextureButton" parent="." unique_id=1654527842]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 247.0
-offset_top = -11.0
-offset_right = 305.0
-offset_bottom = 33.0
+offset_left = -120.0
+offset_top = -203.0
+offset_right = -62.0
+offset_bottom = -147.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_normal = ExtResource("9_kek77")
 
 [node name="books_finished" type="Label" parent="." unique_id=1239176674]
 layout_mode = 1
