@@ -14,13 +14,13 @@ var books_finished = 0
 var book_titles= []
 
 @onready var speech = $SpeechBubble/speech
-@onready var pages_input = $PagesInput
+@onready var pages_input = $TextureRect2/PagesInput
 @onready var pages_label = $PagesLabel
 @onready var rank_label = $RankLabel
 @onready var xp_bar = $XPBar
 @onready var xp_label = $XPLabel
 @onready var timer_input = $TimerInput
-@onready var timer_label = $TimerLabel
+@onready var timer_label = $time_pic/TimerLabel
 @onready var reading_timer = $ReadingTimer
 @onready var book_title = $BookTitleInput
 @onready var book_finished = $books_finished
