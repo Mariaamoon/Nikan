@@ -169,3 +169,7 @@ func _on_log_pages_button_pressed() -> void:
 		speech.text = "oops you read nothing today :("
 	else:
 		speech.text = "\n Nice! You read %d pages!" % pages
+
+
+func _on_exitbutton_pressed() -> void:
+	get_tree().quit()
