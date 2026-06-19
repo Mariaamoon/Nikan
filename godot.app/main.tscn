@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://dt2ofan62emnk" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://4pkx7de5481k" path="res://assets/Photos 6_7_2026 4_16_26 PM.png" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://bx1bq7oa6yajy" path="res://assets/download.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bqeesta5h6cks" path="res://assets/Untitled23_20260619200551.png" id="2_4c57u"]
 [ext_resource type="Texture2D" uid="uid://caqhgv0dv72ke" path="res://assets/dd.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://7e8b3i0yw8m4" path="res://assets/bok.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://tbrvc48vldqc" path="res://assets/20260605_122034.png" id="4_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cuclfh11hrsgj" path="res://assets/ChatGPT Image Jun 4w 2026, 07_3wr3_43 PM.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://deucjkcoqfiby" path="res://assets/fs.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cx3v81bmtp4wb" path="res://assets/ChatGPT Image Jun 4w 202s6, 07_33_43 PM.png" id="6_272bh"]
@@ -30,7 +30,7 @@ anchor_bottom = 1.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_1bvp3")
+texture = ExtResource("2_4c57u")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=303498199]
 layout_mode = 0
@@ -59,13 +59,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -386.0
-offset_top = -309.0
-offset_right = -290.0
-offset_bottom = -213.0
+offset_left = -260.0
+offset_top = -526.0
+offset_right = -73.0
+offset_bottom = -280.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("4_efxa6")
 
 [node name="TimerInput" type="LineEdit" parent="." unique_id=2011018089]
 layout_mode = 0
