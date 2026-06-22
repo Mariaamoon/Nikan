@@ -12,12 +12,12 @@ quotes = [
     {
         "text": 'The Moving Finger writes; and, having writ, moves on: nor all thy Piety nor Wit shall lure it back to cancel half a Line.',
         "author": 'Omar Khayyam',
-        "mood": 'fate',
+        "mood": 'wisdom',
     },
     {
         "text": 'Ah, fill the Cup:—what boots it to repeat how Time is slipping underneath our Feet.',
         "author": 'Omar Khayyam',
-        "mood": 'time',
+        "mood": 'wisdom',
     },
     {
         "text": "One Moment in Annihilation's Waste, One Moment, of the Well of Life to taste.",
@@ -57,7 +57,7 @@ quotes = [
     {
         "text": 'Drink! for you know not whence you came, nor why: Drink! for you know not why you go, nor where.',
         "author": 'Omar Khayyam',
-        "mood": 'mystery',
+        "mood": 'wisdom',
     },
     {
         "text": 'We are no other than a moving row of visionary Shapes that come and go round with this Sun-illumined Lantern held in Midnight by the Master of the Show.',
@@ -67,7 +67,7 @@ quotes = [
     {
         "text": "Yesterday This Day's Madness did prepare; To-morrow's Silence, Triumph, or Despair.",
         "author": 'Omar Khayyam',
-        "mood": 'time',
+        "mood": 'wisdom',
     },
     {
         "text": 'And if the Wine you drink, the Lip you press, end in the Nothing all Things end in—Yes.',
@@ -87,7 +87,7 @@ quotes = [
     {
         "text": 'The Bird of Time has but a little way to fly—and Lo! the Bird is on the Wing.',
         "author": 'Omar Khayyam',
-        "mood": 'time',
+        "mood": 'wisdom',
     },
     {
         "text": 'Lo! some we loved, the loveliest and the best that Time and Fate of all their Vintage prest, have drunk their Cup a Round or two before, and one by one crept silently to Rest.',
@@ -117,12 +117,12 @@ quotes = [
     {
         "text": "'Tis all a Chequer-board of Nights and Days where Destiny with Men for Pieces plays.",
         "author": 'Omar Khayyam',
-        "mood": 'fate',
+        "mood": 'wisdom',
     },
     {
         "text": 'And the first Morning of Creation wrote what the Last Dawn of Reckoning shall read.',
         "author": 'Omar Khayyam',
-        "mood": 'fate',
+        "mood": 'wisdom',
     },
     {
         "text": 'When You and I behind the Veil are past, oh, but the long long while the World shall last.',
@@ -147,7 +147,7 @@ quotes = [
     {
         "text": "Strange, is it not? that of the myriads who before us pass'd the door of Darkness through, not one returns to tell us of the Road.",
         "author": 'Omar Khayyam',
-        "mood": 'mystery',
+        "mood": 'wisdom',
     },
     {
         "text": 'I sent my Soul through the Invisible, some letter of that After-life to spell.',
@@ -252,7 +252,7 @@ quotes = [
     {
         "text": 'My heart says, He has injured me, but I laugh at these pretended injuries.',
         "author": 'Rumi',
-        "mood": 'acceptance',
+        "mood": 'reflecting',
     },
     {
         "text": 'I am enamoured of my own grief and pain, for it makes me well-pleasing to my peerless King.',
@@ -387,7 +387,7 @@ quotes = [
     {
         "text": 'If He crushes His own instruments, He makes those crushed ones fair in His sight.',
         "author": 'Rumi',
-        "mood": 'acceptance',
+        "mood": 'reflecting',
     },
     {
         "text": 'O Aider of aid-seekers, guide us, for there is no security in knowledge or wealth.',
