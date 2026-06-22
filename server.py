@@ -9,7 +9,8 @@ def home():
 
 @app.get("/quote")
 def quote():
+
     return {
-        "text": "Believe in yourself.",
-        "author": "Unknown"
+        "text":"Believe in yourself.",
+        "author":"Unknown"
     }

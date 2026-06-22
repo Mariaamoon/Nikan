@@ -273,8 +273,32 @@ grow_vertical = 2
 scale = Vector2(-0.05, -0.05)
 texture_normal = SubResource("CompressedTexture2D_4c57u")
 
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=781348884]
+
+[node name="quote" type="TextureButton" parent="." unique_id=282270303]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = ExtResource("5_lquwl")
+
+[node name="quotelabel" type="Label" parent="." unique_id=1024034030]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
 [connection signal="text_changed" from="TimerInput" to="." method="_on_timer_input_text_changed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_add_task_button_pressed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="LogPagesButton" to="." method="_on_log_pages_button_pressed"]
 [connection signal="pressed" from="FinishBookButton" to="." method="_on_finish_book_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="quote" to="." method="_on_quote_pressed"]

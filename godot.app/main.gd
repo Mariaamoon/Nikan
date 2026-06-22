@@ -13,6 +13,8 @@ var total_pages = 0
 var books_finished = 0
 var book_titles= []
 
+@onready var quote_label = $quotelabel
+@onready var http = $HTTPRequest
 @onready var speech = $SpeechBubble/speech
 @onready var pages_input = $TextureRect2/PagesInput
 @onready var pages_label = $PagesLabel
@@ -173,3 +175,13 @@ func _on_log_pages_button_pressed() -> void:
 
 func _on_exitbutton_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	var text =body.get_string_from_utf8()
+	var data = JSON.parse_string(text)
+	quote_label.text = data["text"]
+
+func _on_quote_pressed() -> void:
+	http.request( "http://127.0.0.1:8000/quote")
+	   
