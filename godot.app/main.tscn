@@ -295,6 +295,11 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 
+[node name="input" type="LineEdit" parent="." unique_id=747897068]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
 [connection signal="text_changed" from="TimerInput" to="." method="_on_timer_input_text_changed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_add_task_button_pressed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_start_button_pressed"]

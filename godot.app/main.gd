@@ -13,6 +13,7 @@ var total_pages = 0
 var books_finished = 0
 var book_titles= []
 
+@onready var input = $LineEdit
 @onready var quote_label = $quotelabel
 @onready var http = $HTTPRequest
 @onready var speech = $SpeechBubble/speech
@@ -177,11 +178,26 @@ func _on_exitbutton_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	var text =body.get_string_from_utf8()
-	var data = JSON.parse_string(text)
-	quote_label.text = data["text"]
+#func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	#var text =body.get_string_from_utf8()
+	#var data = JSON.parse_string(text)
+	#quote_label.text = data["text"]
+func _on_http_request_request_completed(result, response_code, headers, body):
+	var response = body.get_string_from_utf8()
+	print(response)
+	var data = JSON.parse_string(response)
+	quote_label.text = data["received"]
 
 func _on_quote_pressed() -> void:
-	http.request( "http://127.0.0.1:8000/quote")
-	   
+	#http.request( "http://127.0.0.1:8000/quote")
+	
+	var body = {
+	"text": input.text }
+
+
+	http.request(
+		"http://127.0.0.1:8000/recommend",
+		["Content-Type: application/json"],
+		HTTPClient.METHOD_POST,
+		JSON.stringify(body)
+	)
