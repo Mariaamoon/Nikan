@@ -16,18 +16,28 @@ def quote():
     }
 
 from pydantic import BaseModel
+from train import get_embeddings,model
+from quotes import QUOTES
+from sklearn.metrics.pairwise import cosine_similarity
 
+texts = [q["text"] for q in QUOTES]
+quote_embeddings = get_embeddings(texts)
 
 class UserMessage(BaseModel):
     text: str
-
-#from train import model, quote_embeddings
 
 @app.post("/recommend")
 def recommend(msg: UserMessage):
 
     print(msg.text)
 
-    return {
-        "received": msg.text
-    }
+    emb = model.encode(msg.text)
+
+    scores = cosine_similarity(
+        [emb],
+        quote_embeddings
+    )
+
+    best = scores.argmax()
+
+    return QUOTES[best]

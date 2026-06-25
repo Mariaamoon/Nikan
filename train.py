@@ -19,23 +19,26 @@ quote_embeddings = model.encode(texts)
 # print(quote["text"])
 # print(quote["mood"])
 
-while True:
+# while True:
 
-    user = input("You: ")
+#     user = input("You: ")
 
-    emb = model.encode(user)
+#     emb = model.encode(user)
 
-    scores = cosine_similarity(
-        [emb],
-        quote_embeddings
-    )
+#     scores = cosine_similarity(
+#         [emb],
+#         quote_embeddings
+#     )
 
-    best = scores.argmax()
+#     best = scores.argmax()
 
-    q = QUOTES[best]
+#     q = QUOTES[best]
 
-    print()
-    print(q["text"])
-    print("-", q["author"])
-    print("-", q["mood"])
-    print()
+#     print()
+#     print(q["text"])
+#     print("-", q["author"])
+#     print("-", q["mood"])
+#     print()
+
+def get_embeddings(texts):
+    return model.encode(texts)

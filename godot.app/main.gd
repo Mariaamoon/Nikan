@@ -13,7 +13,7 @@ var total_pages = 0
 var books_finished = 0
 var book_titles= []
 
-@onready var input = $LineEdit
+@onready var input = $input
 @onready var quote_label = $quotelabel
 @onready var http = $HTTPRequest
 @onready var speech = $SpeechBubble/speech
@@ -186,7 +186,12 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	var response = body.get_string_from_utf8()
 	print(response)
 	var data = JSON.parse_string(response)
-	quote_label.text = data["received"]
+	quote_label.text = data["text"]
+	#var response = body.get_string_from_utf8()
+	#print("Status:", response_code)
+	#print("Response:")
+	#print(response)
+	#var data = JSON.parse_string(response)
 
 func _on_quote_pressed() -> void:
 	#http.request( "http://127.0.0.1:8000/quote")
