@@ -34,15 +34,19 @@ func _ready():
 	quote_button.disabled = true
 	start_server()
 	check_server()
+
 func start_server():
 	OS.create_process(
-		 "C:/Users/jam/AppData/Local/Microsoft/WindowsApps/python.exe",
+		 "C:/Users/jam/AppData/Local/Programs/Python/Python313/python.exe",
 		 ["C:/Users/jam/Documents/nikan/server.py"]
 	)
 func check_server():
-	http.request(
+	var err = http.request(
 		"http://127.0.0.1:8000/"
 	)
+	if err != OK:
+		await get_tree().create_timer(1).timeout
+		
 func update_ui():
 
 	xp_bar.value = xp
@@ -195,18 +199,16 @@ func _on_exitbutton_pressed() -> void:
 	#quote_label.text = data["text"]
 func _on_http_request_request_completed(result, response_code, headers, body):
 	var response = body.get_string_from_utf8()
-	print(response)
 	var data = JSON.parse_string(response)
-	quote_label.text = data["text"]
-	if data["status"] == "ready":
+	if "text" in data:
+		quote_label.text = data["text"]
+	elif "status" in data:
+		print("Server ready!")
 		quote_button.disabled = false
-		print("Server ready")
 
 func _on_quote_pressed() -> void:
 	var body = {
 	"text": input.text }
-
-
 	http.request(
 		"http://127.0.0.1:8000/recommend",
 		["Content-Type: application/json"],
