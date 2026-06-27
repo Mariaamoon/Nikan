@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Server running"}
+    return {"status": "ready"}
 
 @app.get("/quote")
 def quote():

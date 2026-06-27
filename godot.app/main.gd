@@ -12,7 +12,7 @@ var reading = false
 var total_pages = 0
 var books_finished = 0
 var book_titles= []
-
+@onready var quote_button = $quote
 @onready var input = $input
 @onready var quote_label = $quotelabel
 @onready var http = $HTTPRequest
@@ -31,7 +31,18 @@ var book_titles= []
 func _ready():
 	load_game()
 	update_ui()
-
+	quote_button.disabled = true
+	start_server()
+	check_server()
+func start_server():
+	OS.create_process(
+		"C:/Python313/python.exe",
+		["C:/my_project/server.py"]
+	)
+func check_server():
+	http.request(
+        "http://127.0.0.1:8000/"
+	)
 func update_ui():
 
 	xp_bar.value = xp
