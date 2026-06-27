@@ -10,6 +10,33 @@
 [ext_resource type="Texture2D" uid="uid://cx3v81bmtp4wb" path="res://assets/ChatGPT Image Jun 4w 202s6, 07_33_43 PM.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://dainmtq6f41fw" path="res://assets/booktitleM.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dok3l72ibm17f" path="res://assets/booktitle.png" id="9_kek77"]
+[ext_resource type="SpriteFrames" uid="uid://cc48wjc1v0x14" path="res://pet.tres" id="11_efxa6"]
+
+[sub_resource type="FontFile" id="FontFile_4c57u"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_efxa6"]
+default_font = SubResource("FontFile_4c57u")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4c57u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 
@@ -49,6 +76,8 @@ offset_left = 157.0
 offset_top = 759.0
 offset_right = 347.0
 offset_bottom = 847.0
+theme = SubResource("Theme_efxa6")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4c57u")
 
 [node name="speech" type="Label" parent="SpeechBubble" unique_id=2092180794]
 layout_mode = 0
@@ -299,6 +328,12 @@ grow_horizontal = 0
 layout_mode = 0
 offset_right = 68.5
 offset_bottom = 31.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1150315760]
+position = Vector2(198, 198)
+sprite_frames = ExtResource("11_efxa6")
+animation = &"new_animation"
+frame_progress = 0.8792465
 
 [connection signal="text_changed" from="TimerInput" to="." method="_on_timer_input_text_changed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_add_task_button_pressed"]
