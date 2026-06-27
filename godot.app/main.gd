@@ -198,6 +198,10 @@ func _on_exitbutton_pressed() -> void:
 	#var data = JSON.parse_string(text)
 	#quote_label.text = data["text"]
 func _on_http_request_request_completed(result, response_code, headers, body):
+	if response_code != 200:
+		await get_tree().create_timer(1).timeout
+		check_server()
+		return
 	var response = body.get_string_from_utf8()
 	var data = JSON.parse_string(response)
 	if "text" in data:
