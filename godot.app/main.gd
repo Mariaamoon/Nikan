@@ -36,12 +36,12 @@ func _ready():
 	check_server()
 func start_server():
 	OS.create_process(
-		"C:/Python313/python.exe",
-		["C:/my_project/server.py"]
+		 "C:/Users/jam/AppData/Local/Microsoft/WindowsApps/python.exe",
+		 ["C:/Users/jam/Documents/nikan/server.py"]
 	)
 func check_server():
 	http.request(
-        "http://127.0.0.1:8000/"
+		"http://127.0.0.1:8000/"
 	)
 func update_ui():
 
@@ -198,15 +198,11 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	print(response)
 	var data = JSON.parse_string(response)
 	quote_label.text = data["text"]
-	#var response = body.get_string_from_utf8()
-	#print("Status:", response_code)
-	#print("Response:")
-	#print(response)
-	#var data = JSON.parse_string(response)
+	if data["status"] == "ready":
+		quote_button.disabled = false
+		print("Server ready")
 
 func _on_quote_pressed() -> void:
-	#http.request( "http://127.0.0.1:8000/quote")
-	
 	var body = {
 	"text": input.text }
 
