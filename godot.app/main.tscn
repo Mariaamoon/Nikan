@@ -329,11 +329,15 @@ layout_mode = 0
 offset_right = 68.5
 offset_bottom = 31.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1150315760]
-position = Vector2(198, 198)
+[node name="idle" type="AnimatedSprite2D" parent="." unique_id=1150315760]
+position = Vector2(507, 186)
 sprite_frames = ExtResource("11_efxa6")
 animation = &"new_animation"
-frame_progress = 0.8792465
+
+[node name="reading" type="AnimatedSprite2D" parent="." unique_id=1739516460]
+position = Vector2(212, 170)
+sprite_frames = ExtResource("11_efxa6")
+animation = &"new_animation_1"
 
 [connection signal="text_changed" from="TimerInput" to="." method="_on_timer_input_text_changed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_add_task_button_pressed"]
