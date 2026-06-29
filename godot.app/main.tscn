@@ -349,7 +349,7 @@ frame = 3
 frame_progress = 0.14979905
 
 [node name="reading" type="AnimatedSprite2D" parent="." unique_id=1739516460]
-position = Vector2(212, 170)
+position = Vector2(497, 700)
 sprite_frames = SubResource("SpriteFrames_efxa6")
 frame = 1
 frame_progress = 0.09932761

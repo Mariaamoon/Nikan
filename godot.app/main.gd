@@ -34,7 +34,8 @@ func _ready():
 	quote_button.disabled = true
 	start_server()
 	check_server()
-	$reading.play()
+	$idle.play()
+	$reading.hide()
 
 func start_server():
 	OS.create_process(
@@ -96,6 +97,10 @@ func _process(delta):
 		timer_label.text = "%02d:%02d" % [minutes, seconds]
 		if time_left <= 0:
 			finish_reading()
+		$idle.hide()
+		$reading.show()
+		$reading.play()
+
 
 func finish_reading():
 	timer_input.clear()
