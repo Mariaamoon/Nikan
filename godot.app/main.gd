@@ -95,11 +95,11 @@ func _process(delta):
 		var minutes = int(time_left) / 60
 		var seconds = int(time_left) 
 		timer_label.text = "%02d:%02d" % [minutes, seconds]
-		if time_left <= 0:
-			finish_reading()
 		$idle.hide()
 		$reading.show()
 		$reading.play()
+		if time_left <= 0:
+			finish_reading()
 
 
 func finish_reading():
@@ -109,6 +109,9 @@ func finish_reading():
 	add_xp(earned_xp)
 	timer_label.text = "Finished!"
 	speech.text = "Great job reading!"
+	$reading.hide()
+	$idle.show()
+	$idle.play()
 
 func save_game():
 
