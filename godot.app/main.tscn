@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cx3v81bmtp4wb" path="res://assets/ChatGPT Image Jun 4w 202s6, 07_33_43 PM.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://dainmtq6f41fw" path="res://assets/booktitleM.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dok3l72ibm17f" path="res://assets/booktitle.png" id="9_kek77"]
+[ext_resource type="FontFile" uid="uid://dgs62idb55tbe" path="res://GreatVibes-Regular.ttf" id="9_yaehf"]
 [ext_resource type="SpriteFrames" uid="uid://cc48wjc1v0x14" path="res://pet.tres" id="11_efxa6"]
 [ext_resource type="Texture2D" uid="uid://dodmwn027557k" path="res://20260605_123625.png" id="11_vivmo"]
 [ext_resource type="Texture2D" uid="uid://ctd5m2i23j5ou" path="res://20260605_123656.png" id="12_2cqfq"]
@@ -183,6 +184,7 @@ offset_left = -324.0
 offset_top = -27.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="XPLabel" type="Label" parent="." unique_id=449339030]
 modulate = Color(0.4627451, 1, 1, 1)
@@ -199,6 +201,7 @@ offset_right = 245.0
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_yaehf")
 text = "intelligence = 0"
 
 [node name="ReadingTimer" type="Timer" parent="." unique_id=1007620704]
@@ -226,6 +229,7 @@ grow_vertical = 2
 rotation = 0.017453292
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("9_yaehf")
 metadata/_edit_use_anchors_ = true
 
 [node name="LogPagesButton" type="TextureButton" parent="." unique_id=54899548]
@@ -256,6 +260,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="RankLabel" type="Label" parent="." unique_id=679080413]
 layout_mode = 1
@@ -265,6 +270,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 40.0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="Bookshelf" type="HBoxContainer" parent="." unique_id=1637307024]
 layout_mode = 0
@@ -285,6 +291,7 @@ offset_left = 192.0
 offset_top = 330.0
 offset_right = 343.0
 offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="FinishBookButton" type="TextureButton" parent="." unique_id=1654527842]
 layout_mode = 1
@@ -303,17 +310,17 @@ texture_normal = ExtResource("9_kek77")
 
 [node name="books_finished" type="Label" parent="." unique_id=1239176674]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -231.0
-offset_top = 125.0
-offset_right = -88.0
-offset_bottom = 148.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.5
+offset_top = -23.0
+offset_right = 71.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="exitbutton" type="TextureButton" parent="." unique_id=16173524]
 custom_minimum_size = Vector2(0.1, 1)
@@ -353,11 +360,13 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="input" type="LineEdit" parent="." unique_id=747897068]
 layout_mode = 0
 offset_right = 68.5
 offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="idle" type="AnimatedSprite2D" parent="." unique_id=1150315760]
 position = Vector2(495, 693)
