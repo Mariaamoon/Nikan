@@ -34,6 +34,7 @@ func _ready():
 	quote_button.disabled = true
 	start_server()
 	check_server()
+	$reading.play()
 
 func start_server():
 	OS.create_process(

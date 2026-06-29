@@ -4,13 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://bqeesta5h6cks" path="res://assets/Untitled23_20260619200551.png" id="2_4c57u"]
 [ext_resource type="Texture2D" uid="uid://caqhgv0dv72ke" path="res://assets/dd.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://7e8b3i0yw8m4" path="res://assets/bok.png" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://tbrvc48vldqc" path="res://assets/20260605_122034.png" id="4_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cuclfh11hrsgj" path="res://assets/ChatGPT Image Jun 4w 2026, 07_3wr3_43 PM.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://deucjkcoqfiby" path="res://assets/fs.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cx3v81bmtp4wb" path="res://assets/ChatGPT Image Jun 4w 202s6, 07_33_43 PM.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://dainmtq6f41fw" path="res://assets/booktitleM.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dok3l72ibm17f" path="res://assets/booktitle.png" id="9_kek77"]
 [ext_resource type="SpriteFrames" uid="uid://cc48wjc1v0x14" path="res://pet.tres" id="11_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dodmwn027557k" path="res://20260605_123625.png" id="11_vivmo"]
+[ext_resource type="Texture2D" uid="uid://ctd5m2i23j5ou" path="res://20260605_123656.png" id="12_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://cmq618akwmqw" path="res://20260605_123732.png" id="13_yaehf"]
+[ext_resource type="Texture2D" uid="uid://bvtkoy88v3jwv" path="res://20260605_123805.png" id="14_074og"]
+[ext_resource type="Texture2D" uid="uid://drvofxygg0og1" path="res://20260605_123825.png" id="15_cegan"]
 
 [sub_resource type="FontFile" id="FontFile_4c57u"]
 cache/0/variation_coordinates = {}
@@ -42,6 +46,29 @@ default_font = SubResource("FontFile_4c57u")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4c57u"]
 load_path = "res://.godot/imported/exit.png-851c039c90041d896886fb5ebf4f1311.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efxa6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_vivmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2cqfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yaehf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_074og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cegan")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control" unique_id=225764511]
 layout_mode = 3
@@ -83,21 +110,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_4c57u")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-
-[node name="pet" type="TextureRect" parent="." unique_id=481887095]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -260.0
-offset_top = -526.0
-offset_right = -73.0
-offset_bottom = -280.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("4_efxa6")
 
 [node name="TimerInput" type="LineEdit" parent="." unique_id=2011018089]
 layout_mode = 0
@@ -330,14 +342,17 @@ offset_right = 68.5
 offset_bottom = 31.0
 
 [node name="idle" type="AnimatedSprite2D" parent="." unique_id=1150315760]
-position = Vector2(507, 186)
+position = Vector2(495, 693)
 sprite_frames = ExtResource("11_efxa6")
 animation = &"new_animation"
+frame = 3
+frame_progress = 0.14979905
 
 [node name="reading" type="AnimatedSprite2D" parent="." unique_id=1739516460]
 position = Vector2(212, 170)
-sprite_frames = ExtResource("11_efxa6")
-animation = &"new_animation_1"
+sprite_frames = SubResource("SpriteFrames_efxa6")
+frame = 1
+frame_progress = 0.09932761
 
 [connection signal="text_changed" from="TimerInput" to="." method="_on_timer_input_text_changed"]
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_add_task_button_pressed"]
