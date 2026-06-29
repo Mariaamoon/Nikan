@@ -359,5 +359,6 @@ frame_progress = 0.09932761
 [connection signal="pressed" from="time_pic/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="LogPagesButton" to="." method="_on_log_pages_button_pressed"]
 [connection signal="pressed" from="FinishBookButton" to="." method="_on_finish_book_button_pressed"]
+[connection signal="pressed" from="exitbutton" to="." method="_on_exitbutton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="quote" to="." method="_on_quote_pressed"]

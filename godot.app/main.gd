@@ -197,15 +197,6 @@ func _on_log_pages_button_pressed() -> void:
 	else:
 		speech.text = "\n Nice! You read %d pages!" % pages
 
-
-func _on_exitbutton_pressed() -> void:
-	get_tree().quit()
-
-
-#func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	#var text =body.get_string_from_utf8()
-	#var data = JSON.parse_string(text)
-	#quote_label.text = data["text"]
 func _on_http_request_request_completed(result, response_code, headers, body):
 	if response_code != 200:
 		await get_tree().create_timer(1).timeout
@@ -228,3 +219,7 @@ func _on_quote_pressed() -> void:
 		HTTPClient.METHOD_POST,
 		JSON.stringify(body)
 	)
+
+
+func _on_exitbutton_pressed() -> void:
+	get_tree().quit();
