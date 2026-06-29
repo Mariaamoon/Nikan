@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://dt2ofan62emnk" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://7umfw588o0ed" path="res://introbackground.gdshader" id="2_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bqeesta5h6cks" path="res://assets/Untitled23_20260619200551.png" id="2_4c57u"]
 [ext_resource type="Texture2D" uid="uid://caqhgv0dv72ke" path="res://assets/dd.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://7e8b3i0yw8m4" path="res://assets/bok.png" id="4_1bvp3"]
@@ -15,6 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://cmq618akwmqw" path="res://20260605_123732.png" id="13_yaehf"]
 [ext_resource type="Texture2D" uid="uid://bvtkoy88v3jwv" path="res://20260605_123805.png" id="14_074og"]
 [ext_resource type="Texture2D" uid="uid://drvofxygg0og1" path="res://20260605_123825.png" id="15_cegan"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yaehf"]
+shader = ExtResource("2_2cqfq")
+shader_parameter/color_a = Color(0.953, 0.651, 0.878, 1)
+shader_parameter/color_b = Color(0.663, 0.561, 0.941, 1)
+shader_parameter/color_c = Color(0.682, 0.89, 0.969, 1)
+shader_parameter/speed = 0.08900000352898
 
 [sub_resource type="FontFile" id="FontFile_4c57u"]
 cache/0/variation_coordinates = {}
@@ -79,7 +87,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0xm2m")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=856856149]
+material = SubResource("ShaderMaterial_yaehf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="back" type="TextureRect" parent="." unique_id=430255248]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
