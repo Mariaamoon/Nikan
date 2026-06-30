@@ -36,6 +36,7 @@ func _ready():
 	check_server()
 	$idle.play()
 	$reading.hide()
+	reset_save()
 
 func start_server():
 	OS.create_process(
@@ -148,7 +149,16 @@ func load_game():
 		books_finished = data.get("books_finished" ,0)
 		book_titles = data.get("book_tites" ,[])
 	update_ui()
-
+	
+func reset_save():
+	if FileAccess.file_exists("user://save.json"):
+		DirAccess.remove_absolute("user://save.json")
+	xp = 0
+	total_pages = 0
+	books_finished = 0
+	book_titles = []
+	update_ui()
+	
 func add_book_to_shelf(title):
 	var label = Label.new()
 	label.text = "📕"

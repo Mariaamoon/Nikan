@@ -129,6 +129,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_4c57u")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="TimerInput" type="LineEdit" parent="." unique_id=2011018089]
 layout_mode = 0
@@ -184,7 +185,6 @@ offset_left = -324.0
 offset_top = -27.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="XPLabel" type="Label" parent="." unique_id=449339030]
 modulate = Color(0.4627451, 1, 1, 1)
@@ -229,7 +229,6 @@ grow_vertical = 2
 rotation = 0.017453292
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("9_yaehf")
 metadata/_edit_use_anchors_ = true
 
 [node name="LogPagesButton" type="TextureButton" parent="." unique_id=54899548]
@@ -260,7 +259,6 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="RankLabel" type="Label" parent="." unique_id=679080413]
 layout_mode = 1
@@ -291,7 +289,6 @@ offset_left = 192.0
 offset_top = 330.0
 offset_right = 343.0
 offset_bottom = 386.0
-theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="FinishBookButton" type="TextureButton" parent="." unique_id=1654527842]
 layout_mode = 1
@@ -310,17 +307,17 @@ texture_normal = ExtResource("9_kek77")
 
 [node name="books_finished" type="Label" parent="." unique_id=1239176674]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -71.5
-offset_top = -23.0
-offset_right = 71.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_yaehf")
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = 125.0
+offset_right = -88.0
+offset_bottom = 148.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="exitbutton" type="TextureButton" parent="." unique_id=16173524]
 custom_minimum_size = Vector2(0.1, 1)
@@ -360,13 +357,11 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="input" type="LineEdit" parent="." unique_id=747897068]
 layout_mode = 0
 offset_right = 68.5
 offset_bottom = 31.0
-theme_override_fonts/font = ExtResource("9_yaehf")
 
 [node name="idle" type="AnimatedSprite2D" parent="." unique_id=1150315760]
 position = Vector2(495, 693)
