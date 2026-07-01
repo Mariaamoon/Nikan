@@ -37,7 +37,7 @@ func _ready():
 	$idle.play()
 	$reading.hide()
 	reset_save()
-
+	$name.text = "Hello, " + Global.player_name + "!"
 func start_server():
 	OS.create_process(
 		 "C:/Users/jam/AppData/Local/Programs/Python/Python313/python.exe",
