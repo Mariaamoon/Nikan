@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d2n6e5ai3wb35"]
+
+[ext_resource type="Shader" uid="uid://7umfw588o0ed" path="res://introbackground.gdshader" id="1_s2ta7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayt76"]
+shader = ExtResource("1_s2ta7")
+shader_parameter/color_a = Color(0.953, 0.651, 0.878, 1)
+shader_parameter/color_b = Color(0.663, 0.561, 0.941, 1)
+shader_parameter/color_c = Color(0.682, 0.89, 0.969, 1)
+shader_parameter/speed = 0.08
+
+[node name="intro" type="Node" unique_id=1929081277]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=175033431]
+material = SubResource("ShaderMaterial_ayt76")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="." unique_id=1021816444]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=196218170]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.97400004
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -536.80005
+offset_right = 113.0
+offset_bottom = -502.0
+grow_horizontal = 2
+grow_vertical = 0
