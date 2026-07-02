@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from intent import detect_intent
+from memory import extract_name, set_name, get_name
 
 app = FastAPI()
 
@@ -26,11 +28,24 @@ quote_embeddings = get_embeddings(texts)
 class UserMessage(BaseModel):
     text: str
 
+class UserName(BaseModel):
+    name: str
+
+@app.post("/set_name")
+def set_user_name(user: UserName):
+
+    set_name(user.name)
+
+    return {
+        "success": True
+    }
+
 @app.post("/recommend")
 def recommend(msg: UserMessage):
 
     print(msg.text)
 
+        
     emb = model.encode(msg.text)
 
     scores = cosine_similarity(
