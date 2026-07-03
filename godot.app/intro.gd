@@ -6,8 +6,7 @@ extends Node
 
 func _ready():
 
-	Network.name_saved.connect(_on_name_saved)
-
+	pass
 
 func _on_name_saved():
 
@@ -16,3 +15,4 @@ func _on_name_saved():
 
 func _on_startbutton_pressed() -> void:
 	Network.send_name(name_input.text)
+	Network.name_saved.connect(_on_name_saved)
