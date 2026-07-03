@@ -12,11 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://dok3l72ibm17f" path="res://assets/booktitle.png" id="9_kek77"]
 [ext_resource type="FontFile" uid="uid://dgs62idb55tbe" path="res://GreatVibes-Regular.ttf" id="9_yaehf"]
 [ext_resource type="SpriteFrames" uid="uid://cc48wjc1v0x14" path="res://pet.tres" id="11_efxa6"]
-[ext_resource type="Texture2D" uid="uid://dodmwn027557k" path="res://20260605_123625.png" id="11_vivmo"]
-[ext_resource type="Texture2D" uid="uid://ctd5m2i23j5ou" path="res://20260605_123656.png" id="12_2cqfq"]
-[ext_resource type="Texture2D" uid="uid://cmq618akwmqw" path="res://20260605_123732.png" id="13_yaehf"]
-[ext_resource type="Texture2D" uid="uid://bvtkoy88v3jwv" path="res://20260605_123805.png" id="14_074og"]
-[ext_resource type="Texture2D" uid="uid://drvofxygg0og1" path="res://20260605_123825.png" id="15_cegan"]
+[ext_resource type="Texture2D" uid="uid://bud2vkmhkwjg1" path="res://assets/bun/reading_01.png" id="13_074og"]
+[ext_resource type="Texture2D" uid="uid://37lc128myiso" path="res://assets/bun/reading_02.png" id="14_cegan"]
+[ext_resource type="Texture2D" uid="uid://bade6bc8rcmq7" path="res://assets/bun/reading_03.png" id="15_82xsv"]
+[ext_resource type="Texture2D" uid="uid://coekrnp01epwv" path="res://assets/bun/reading_04.png" id="16_getpj"]
+[ext_resource type="Texture2D" uid="uid://cvtlvbla7uvo7" path="res://assets/bun/reading_05.png" id="17_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cgrb0qxj17u87" path="res://assets/bun/reading_06.png" id="18_d13ii"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yaehf"]
 shader = ExtResource("2_2cqfq")
@@ -60,19 +61,22 @@ load_path = "res://.godot/imported/exit.png-851c039c90041d896886fb5ebf4f1311.cte
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_vivmo")
+"texture": ExtResource("13_074og")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_2cqfq")
+"texture": ExtResource("14_cegan")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_yaehf")
+"texture": ExtResource("15_82xsv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_074og")
+"texture": ExtResource("16_getpj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_cegan")
+"texture": ExtResource("17_ryguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_d13ii")
 }],
 "loop": true,
 "name": &"default",
@@ -374,7 +378,7 @@ frame_progress = 0.14979905
 position = Vector2(497, 700)
 sprite_frames = SubResource("SpriteFrames_efxa6")
 frame = 1
-frame_progress = 0.09932761
+frame_progress = 0.7758244
 
 [node name="name" type="Label" parent="." unique_id=1705433290]
 layout_mode = 1
