@@ -1,7 +1,8 @@
 import json
 import os
 
-MEMORY_FILE = "user_memory.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MEMORY_FILE = os.path.join(BASE_DIR, "user_memory.json")
 
 def load_memory():
     if os.path.exists(MEMORY_FILE):
@@ -11,14 +12,14 @@ def load_memory():
     return {"name": None}
 
 def save_memory(memory):
+    print("Saving to:", os.path.abspath(MEMORY_FILE))
     with open(MEMORY_FILE, "w") as f:
         json.dump(memory, f, indent=4)
 
-memory = {
-    "name": None
-}
+memory = load_memory()
 
 def set_name(name):
+    memory = load_memory()
     memory["name"] = name
     save_memory(memory)
 

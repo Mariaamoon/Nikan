@@ -64,6 +64,4 @@ grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("3_7a8ye")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=2135903349]
-
 [connection signal="pressed" from="startbutton" to="." method="_on_startbutton_pressed"]

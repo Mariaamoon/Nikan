@@ -31,25 +31,11 @@ var book_titles= []
 func _ready():
 	load_game()
 	update_ui()
-	quote_button.disabled = true
-	start_server()
-	check_server()
+	Network.quote_received.connect(_on_quote_received)
 	$idle.play()
 	$reading.hide()
-	reset_save()
 	$name.text = "Hello, " + Global.player_name + "!"
-func start_server():
-	OS.create_process(
-		 "C:/Users/jam/AppData/Local/Programs/Python/Python313/python.exe",
-		 ["C:/Users/jam/Documents/nikan/server.py"]
-	)
-func check_server():
-	var err = http.request(
-		"http://127.0.0.1:8000/"
-	)
-	if err != OK:
-		await get_tree().create_timer(1).timeout
-		
+
 func update_ui():
 
 	xp_bar.value = xp
@@ -207,29 +193,14 @@ func _on_log_pages_button_pressed() -> void:
 	else:
 		speech.text = "\n Nice! You read %d pages!" % pages
 
-func _on_http_request_request_completed(result, response_code, headers, body):
-	if response_code != 200:
-		await get_tree().create_timer(1).timeout
-		check_server()
-		return
-	var response = body.get_string_from_utf8()
-	var data = JSON.parse_string(response)
-	if "text" in data:
-		quote_label.text = data["text"]
-	elif "status" in data:
-		print("Server ready!")
-		quote_button.disabled = false
-
 func _on_quote_pressed() -> void:
-	var body = {
-	"text": input.text }
-	http.request(
-		"http://127.0.0.1:8000/recommend",
-		["Content-Type: application/json"],
-		HTTPClient.METHOD_POST,
-		JSON.stringify(body)
+	Network.request_quote(
+	input.text
 	)
 
+func _on_quote_received(data):
+	quote_label.text = data["text"]
 
 func _on_exitbutton_pressed() -> void:
+	print("Sending quote request")
 	get_tree().quit();

@@ -33,12 +33,13 @@ class UserName(BaseModel):
 
 @app.post("/set_name")
 def set_user_name(user: UserName):
+    print("Received:", user.name)
 
     set_name(user.name)
 
-    return {
-        "success": True
-    }
+    print("Saved:", get_name())
+
+    return {"success": True}
 
 @app.post("/recommend")
 def recommend(msg: UserMessage):
