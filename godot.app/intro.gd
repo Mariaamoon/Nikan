@@ -16,3 +16,4 @@ func _on_name_saved():
 
 func _on_startbutton_pressed() -> void:
 	Network.send_name(name_input.text)
+	get_tree().change_scene_to_file("res://Main.tscn")
