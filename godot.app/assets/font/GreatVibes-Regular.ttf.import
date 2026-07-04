@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://drkrns8q71q3w"
-path="res://.godot/imported/GreatVibes-Regular.ttf-a274880e28c7fb577d5b778c430c75f5.fontdata"
+uid="uid://dgs62idb55tbe"
+path="res://.godot/imported/GreatVibes-Regular.ttf-ac8bda7bf9078d93b6e8ff37a2ddb06f.fontdata"
 
 [deps]
 
-source_file="res://GreatVibes-Regular.ttf"
-dest_files=["res://.godot/imported/GreatVibes-Regular.ttf-a274880e28c7fb577d5b778c430c75f5.fontdata"]
+source_file="res://assets/font/GreatVibes-Regular.ttf"
+dest_files=["res://.godot/imported/GreatVibes-Regular.ttf-ac8bda7bf9078d93b6e8ff37a2ddb06f.fontdata"]
 
 [params]
 

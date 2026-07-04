@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cx3v81bmtp4wb" path="res://assets/ChatGPT Image Jun 4w 202s6, 07_33_43 PM.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://dainmtq6f41fw" path="res://assets/booktitleM.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dok3l72ibm17f" path="res://assets/booktitle.png" id="9_kek77"]
-[ext_resource type="FontFile" uid="uid://dgs62idb55tbe" path="res://GreatVibes-Regular.ttf" id="9_yaehf"]
+[ext_resource type="FontFile" uid="uid://dgs62idb55tbe" path="res://assets/font/GreatVibes-Regular.ttf" id="9_yaehf"]
 [ext_resource type="SpriteFrames" uid="uid://cc48wjc1v0x14" path="res://pet.tres" id="11_efxa6"]
 [ext_resource type="Texture2D" uid="uid://bud2vkmhkwjg1" path="res://assets/bun/reading_01.png" id="13_074og"]
 [ext_resource type="Texture2D" uid="uid://37lc128myiso" path="res://assets/bun/reading_02.png" id="14_cegan"]
