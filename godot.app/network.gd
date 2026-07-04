@@ -26,7 +26,11 @@ func start_server():
 
 	OS.create_process(
 	"C:/Users/jam/AppData/Local/Programs/Python/Python313/python.exe",
-		 ["C:/Users/jam/Documents/nikan/server.py"]
+		 ["-m",
+		"uvicorn",
+		"server:app",
+		"--host", "127.0.0.1",
+		"--port", "8000"]
 	)
 
 	await get_tree().create_timer(2).timeout
@@ -44,22 +48,24 @@ func check_server():
 
 
 func send_name(name):
+	print("Sending name:", name)
 
 	var body = {
 		"name": name
 	}
+	print("JSON:", JSON.stringify(body))
 
 	var headers = [
         "Content-Type: application/json"
 	]
 
-	api_http.request(
+	var err = api_http.request(
 		"http://127.0.0.1:8000/set_name",
 		headers,
 		HTTPClient.METHOD_POST,
 		JSON.stringify(body)
 	)
-
+	print("Request result:", err)
 
 func request_quote(text):
 	print("Requesting quote:", text)

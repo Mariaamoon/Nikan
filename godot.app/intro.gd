@@ -6,8 +6,7 @@ extends Node
 
 func _ready():
 
-	Network.name_saved.connect(_on_name_saved)
-
+	pass
 
 func _on_name_saved():
 
