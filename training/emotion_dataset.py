@@ -9,12 +9,12 @@ class emotiondataset(Dataset):
         self.embedder = embedder or SentenceTransformer ("all-MiniLM-L6-v2")
         print("encoding...")
         self.embeddings = self.embedder.encode(
-            self.texts,
+            self.text,
             convert_to_tensor = True,
             show_progress_bar= True,
             batch_size= 64
         )
-    def __le__(self):
+    def __len__(self):
         return len(self.labels)
     def __getitem__(self, index):
         return (

@@ -1,5 +1,5 @@
 import torch.nn as nn
-class emotionclassifier(nn.module):
+class emotionclassifier(nn.Module):
     def __init__(self):
         super().__init__()
         self.network=nn.Sequential(
