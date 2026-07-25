@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b6vf1aji6dy38"]
+
+[ext_resource type="Script" uid="uid://d344diwsrwx54" path="res://QuoteMatcher.gd" id="1_37kl0"]
+
+[node name="Test" type="Node2D" unique_id=1655220080]
+script = ExtResource("1_37kl0")
